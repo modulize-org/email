@@ -6,7 +6,7 @@ Copy and paste email templates built with React Email for your next project.
 
 ## Documentation
 
-Visit http://email.modulize.com/docs to view the documentation.
+Visit http://email.modulize.co/docs to view the documentation.
 
 ## License
 
