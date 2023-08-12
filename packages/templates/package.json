@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
-    "start": "email dev --dir templates --port 4000",
+    "dev": "email dev --dir templates --port 4000",
     "export": "email export --dir templates --outDir generated"
   },
   "devDependencies": {
