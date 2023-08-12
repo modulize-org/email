@@ -1,0 +1,26 @@
+{
+  "name": "@modulize/templates",
+  "version": "0.0.18",
+  "private": true,
+  "workspaces": [
+    ".react-email"
+  ],
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\"",
+    "start": "email dev --dir templates --port 4000",
+    "export": "email export --dir templates --outDir generated"
+  },
+  "devDependencies": {
+    "@modulize/config": "workspace:*",
+    "@modulize/tsconfig": "workspace:*",
+    "@types/node": "^20.4.10",
+    "@types/react": "^18.2.20",
+    "csstype": "^3.1.2",
+    "react": "^17.0.2",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@react-email/components": "0.0.6",
+    "react-email": "1.9.3"
+  }
+}

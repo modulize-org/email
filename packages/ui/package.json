@@ -1,0 +1,20 @@
+{
+  "name": "@modulize/ui",
+  "version": "0.0.0",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\"",
+    "generate:component": "turbo gen react-component"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^7.32.0",
+    "@modulize/config": "workspace:*",
+    "react": "^17.0.2",
+    "@modulize/tsconfig": "workspace:*",
+    "typescript": "^4.5.2"
+  }
+}
