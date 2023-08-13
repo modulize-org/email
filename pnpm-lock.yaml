@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -22,6 +26,9 @@ importers:
       '@modulize/config':
         specifier: workspace:*
         version: link:packages/config
+      '@modulize/tsconfig':
+        specifier: workspace:*
+        version: link:packages/tsconfig
       '@turbo/gen':
         specifier: ^1.9.7
         version: 1.9.7(@types/node@20.4.10)(typescript@4.9.5)
