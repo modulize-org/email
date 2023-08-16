@@ -1,6 +1,6 @@
-import { Node } from "unist-builder"
+import type { Props } from "unist-builder"
 
-export interface UnistNode extends Node {
+export interface UnistNode extends Props {
   type: string
   name?: string
   tagName?: string
