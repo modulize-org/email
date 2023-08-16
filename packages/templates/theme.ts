@@ -1,12 +1,14 @@
 import type { Properties } from 'csstype';
+import { TailwindConfig } from "tw-to-css"
 
-export const theme = {
-  colors: <Properties>{
-    color: '#000',
-    backgroundColor: '#fff',
+const theme = {
+  theme: {
+    extend: {
+      colors: {
+        brand: "#007291",
+      },
+    },
   },
-  spacing: <Properties>{
-    padding: '10px',
-    margin: '10px',
-  },
-};
+} satisfies TailwindConfig
+
+export default theme
