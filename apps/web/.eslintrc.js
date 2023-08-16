@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ["preset"],
+  extends: ["@modulize/eslint-config/eslint-config-next"],
 }

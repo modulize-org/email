@@ -9,17 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@modulize/ui": "workspace:*",
     "next": "^13.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@modulize/ui": "workspace:*"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@modulize/eslint-config": "workspace:^",
+    "@modulize/tsconfig": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
-    "@modulize/config": "workspace:*",
-    "@modulize/tsconfig": "workspace:*",
     "typescript": "^4.5.3"
   }
 }

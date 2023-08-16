@@ -7,11 +7,13 @@
   ],
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
+    "clean:dist": "rm -rf generated",
+    "clean:dev": "rm -rf .react-email",
     "dev": "email dev --dir templates --port 4000",
     "export": "email export --dir templates --outDir generated"
   },
   "devDependencies": {
-    "@modulize/config": "workspace:*",
+    "@modulize/eslint-config": "workspace:*",
     "@modulize/tsconfig": "workspace:*",
     "@types/node": "^20.4.10",
     "@types/react": "^18.2.20",

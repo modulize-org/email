@@ -14,7 +14,7 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
-    "@modulize/config": "workspace:*",
+    "@modulize/eslint-config": "workspace:*",
     "@modulize/tsconfig": "workspace:*",
     "@turbo/gen": "^1.9.7",
     "eslint": "^7.32.0",
