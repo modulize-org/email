@@ -1,6 +1,20 @@
 import * as React from "react";
-import { emailConfig } from "../theme";
-import { Body, Button, Column, Container, Head, Heading, Hr, Html, Img, Link, Preview, Row, Section, Tailwind, Text } from "@react-email/components";
+import { emailConfig } from "../email-config"
+import {
+  Body,
+  Button,
+  Container,
+  Head,
+  Heading,
+  Hr,
+  Html,
+  Img,
+  Link,
+  Preview,
+  Section,
+  Tailwind,
+  Text,
+} from "@react-email/components"
 
 
 export interface MagicLinkEmailProps {
