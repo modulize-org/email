@@ -1,24 +1,9 @@
-import * as React from "react"
-import { emailConfig } from "../theme"
-import {
-  Body,
-  Button,
-  Column,
-  Container,
-  Head,
-  Heading,
-  Hr,
-  Html,
-  Img,
-  Link,
-  Preview,
-  Row,
-  Section,
-  Tailwind,
-  Text,
-} from "@react-email/components"
+import * as React from "react";
+import { emailConfig } from "../theme";
+import { Body, Button, Column, Container, Head, Heading, Hr, Html, Img, Link, Preview, Row, Section, Tailwind, Text } from "@react-email/components";
 
-interface EmailMagicLinkProps {
+
+export interface MagicLinkEmailProps {
   description?: string
   loginLink: string
   browser?: string
@@ -26,7 +11,7 @@ interface EmailMagicLinkProps {
   time?: Date
 }
 
-export const VercelInviteUserEmail = ({
+export const MagicLinkEmail = ({
   description = "Click the button below to securely log in to your account. If you did not request this, you can safely ignore this email.",
   loginLink = emailConfig.isDev
     ? "http://email.modulized.co"
@@ -34,7 +19,7 @@ export const VercelInviteUserEmail = ({
   browser = emailConfig.isDev ? "Chrome" : undefined,
   os = emailConfig.isDev ? "Mac OS" : undefined,
   time = emailConfig.isDev ? new Date() : undefined,
-}: EmailMagicLinkProps) => {
+}: MagicLinkEmailProps) => {
   const previewText = `Log in to ${emailConfig.companyName}`
 
   return (
@@ -109,4 +94,4 @@ export const VercelInviteUserEmail = ({
   )
 }
 
-export default VercelInviteUserEmail
+export default MagicLinkEmail
