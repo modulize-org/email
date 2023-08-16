@@ -33,6 +33,9 @@ chmod ug+x .husky/*
 chmod ug+x .git/hooks/*
 ```
 
+## Acknowledgements
+- Docs inspired by [shadcn/ui](https://ui.shadcn.com/)
+
 ## License
 
 Licensed under the [MIT license](LICENSE.md).

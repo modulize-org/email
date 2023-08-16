@@ -1,0 +1,1 @@
+{"version":3,"file":"email-magic-link.d.ts","sourceRoot":"","sources":["../../templates/email-magic-link.tsx"],"names":[],"mappings":"AAmBA,MAAM,WAAW,mBAAmB;IAClC,WAAW,CAAC,EAAE,MAAM,CAAA;IACpB,SAAS,EAAE,MAAM,CAAA;IACjB,OAAO,CAAC,EAAE,MAAM,CAAA;IAChB,EAAE,CAAC,EAAE,MAAM,CAAA;IACX,IAAI,CAAC,EAAE,IAAI,CAAA;CACZ;AAED,eAAO,MAAM,cAAc,mDAQxB,mBAAmB,4CAyErB,CAAA;AAED,eAAe,cAAc,CAAA"}
