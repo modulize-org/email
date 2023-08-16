@@ -1,7 +1,3 @@
-import type { Properties } from 'csstype';
-import type { TailwindConfig } from "tw-to-css"
-
-
 const constants = {
   isDev: process.env.NODE_ENV === "development",
   baseUrl: "https://email.modulize.co",
@@ -15,6 +11,13 @@ const constants = {
  *
  * Note: Most email clients are style-limited and some styles may not work.
  * @see https://react.email/docs/components/tailwind
+ *
+ * For type completion you can optionally install `tw-to-css`:
+ * ```
+ * import import type { TailwindConfig } from "tw-to-css"
+ *
+ * const tailwindConfig: TailwindConfig = { ... }
+ * ```
  */
 const tailwindConfig = {
   theme: {
@@ -26,8 +29,9 @@ const tailwindConfig = {
         "primary-highlight": "#ffffff",
       },
     },
+    blabla: {},
   },
-} satisfies TailwindConfig
+}
 
 const emailConfig = {
   twConfig: tailwindConfig,
