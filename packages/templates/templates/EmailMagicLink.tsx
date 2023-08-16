@@ -26,10 +26,6 @@ interface EmailMagicLinkProps {
   time?: Date
 }
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : ""
-
 export const VercelInviteUserEmail = ({
   description = "Click the button below to securely log in to your account. If you did not request this, you can safely ignore this email.",
   loginLink = emailConfig.isDev
@@ -50,30 +46,31 @@ export const VercelInviteUserEmail = ({
           <Container className="bg-body-email rounded-lg my-[40px]  p-[20px] w-[465px]">
             <Section>
               <Img
-                src={`${baseUrl}/static/vercel-logo.png`}
-                width="40"
-                height="37"
-                alt="Vercel"
+                src={emailConfig.logo}
+                height="34"
+                alt={emailConfig.companyName}
                 className="my-0"
               />
             </Section>
 
-            <Heading className="text-black text-[24px] font-bold p-0 my-[20px] mx-0">
-              Log in to {emailConfig.companyName}
-            </Heading>
+            <Section className="mt-[14px]">
+              <Heading className="text-black text-[24px] font-bold p-0 my-[20px] mx-0">
+                Log in to {emailConfig.companyName}
+              </Heading>
 
-            <Text className="text-black text-[14px] leading-[24px]">
-              {description}
-            </Text>
+              <Text className="text-black text-[16px] leading-[24px]">
+                {description}
+              </Text>
+            </Section>
 
-            <Section className="mt-[32px] mb-[32px]">
+            <Section className="mt-[10px] mb-[32px]">
               <Button
                 pX={20}
                 pY={12}
                 className="bg-[#000000] bg-primary rounded text-primary-highlight text-[12px] font-semibold no-underline text-center"
                 href={loginLink}
               >
-                Join the team
+                Log in to {emailConfig.companyName}
               </Button>
             </Section>
 

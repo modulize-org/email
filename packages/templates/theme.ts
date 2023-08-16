@@ -2,11 +2,11 @@ import type { Properties } from 'csstype';
 import type { TailwindConfig } from "tw-to-css"
 
 
-
 const constants = {
   isDev: process.env.NODE_ENV === "development",
-  baseUrl: "https://email.modulized.co",
-  companyName: "Modulized",
+  baseUrl: "https://email.modulize.co",
+  logo: "https://email.modulize.co/logo/logo-dark.png",
+  companyName: "Modulize",
   icon: "",
 } as const
 
