@@ -1,11 +1,13 @@
-import { notFound } from "next/navigation"
-import { Mdx } from "@/components/mdx-components"
-import { DocsPager } from "@/components/pager"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { cn } from "@/lib/utils"
-import { ChevronRightIcon } from "@radix-ui/react-icons"
-import { allDocs } from "contentlayer/generated"
+import { notFound } from "next/navigation";
+import { Mdx } from "@/components/mdx-components";
+import { DocsPager } from "@/components/pager";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
+import { ChevronRightIcon } from "@radix-ui/react-icons";
+import { allDocs } from "contentlayer/generated";
 import Balancer from "react-wrap-balancer"
+import "@/lib/styles/mdx.css"
+
 
 interface DocPageProps {
   params: {

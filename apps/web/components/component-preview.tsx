@@ -1,14 +1,15 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { CopyButton, CopyWithClassNames } from "@/components/copy-button"
-import { Icons } from "@/components/icons"
-import { StyleSwitcher } from "@/components/style-switcher"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { useEmailConfig } from "@/hooks/use-email-config"
-import { email_styles } from "@/lib/config/email-styles"
-import { email_templates_directory } from "@/lib/config/email-templates"
+import * as React from "react";
+import { CopyButton, CopyWithClassNames } from "@/components/copy-button";
+import { Icons } from "@/components/icons";
+import { StyleSwitcher } from "@/components/style-switcher";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useEmailConfig } from "@/hooks/use-email-config";
+import { email_styles } from "@/lib/config/email-styles";
+import { email_templates_directory } from "@/lib/config/email-templates";
 import { cn } from "@/lib/utils"
+import { render } from "@react-email/render"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -28,27 +29,15 @@ export function ComponentPreview({
 }: ComponentPreviewProps) {
   const [config] = useEmailConfig()
   const index = email_styles.findIndex((style) => style.name === config.style)
+  const Component = email_templates_directory[config.style][name]?.component
+  const markup = render(<Component />, { pretty: true })
 
   const Codes = React.Children.toArray(children) as React.ReactElement[]
   const Code = Codes[index]
 
   const Preview = React.useMemo(() => {
-    const Component = email_templates_directory[config.style][name]?.component
-
-    if (!Component) {
-      return (
-        <p className="text-sm text-muted-foreground">
-          Component{" "}
-          <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
-            {name}
-          </code>{" "}
-          not found in registry.
-        </p>
-      )
-    }
-
-    return <Component />
-  }, [name, config.style])
+    return <iframe srcDoc={markup} className="w-full h-[calc(100vh_-_150px)]" />
+  }, [name, config.style, markup])
 
   const codeString = React.useMemo(() => {
     if (
@@ -57,6 +46,9 @@ export function ComponentPreview({
       const [, Button] = React.Children.toArray(
         Code.props.children
       ) as React.ReactElement[]
+
+      console.log(Button)
+
       return Button?.props?.value || Button?.props?.__rawString__ || null
     }
   }, [Code])
@@ -100,7 +92,7 @@ export function ComponentPreview({
           <>
             <div
               className={cn(
-                "preview flex min-h-[350px] w-full justify-center p-10",
+                "preview flex min-h-[350px] w-full justify-center",
                 {
                   "items-center": align === "center",
                   "items-start": align === "start",

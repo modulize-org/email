@@ -1,5 +1,6 @@
-import * as React from "react"
+import * as React from "react";
 import type { EmailStyle } from "./email-styles"
+import { MagicLinkEmail } from "@modulize/templates"
 
 type EmailDirectory = Record<
   EmailStyle["name"],
@@ -20,11 +21,7 @@ export const email_templates_directory = {
       name: "magic-link-login",
       type: "components:ui",
       registryDependencies: undefined,
-      component: React.lazy(() =>
-        import("@modulize/templates").then((module) => ({
-          default: module.MagicLinkEmail,
-        }))
-      ),
+      component: MagicLinkEmail,
     },
   },
 } satisfies EmailDirectory
