@@ -1,5 +1,5 @@
 import * as React from "react";
-import type { EmailStyle } from "./email-styles"
+import type { EmailStyle } from "./email-styles";
 import { MagicLinkEmail } from "@modulize/templates"
 
 type EmailDirectory = Record<
@@ -10,7 +10,7 @@ type EmailDirectory = Record<
       name: string
       type: string
       registryDependencies: string[] | undefined
-      component: React.LazyExoticComponent<React.ComponentType<any>>
+      component: React.ComponentType<any>
     }
   >
 >
