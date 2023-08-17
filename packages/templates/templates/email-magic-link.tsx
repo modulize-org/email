@@ -1,20 +1,6 @@
 import * as React from "react";
-import { emailConfig } from "../email-config"
-import {
-  Body,
-  Button,
-  Container,
-  Head,
-  Heading,
-  Hr,
-  Html,
-  Img,
-  Link,
-  Preview,
-  Section,
-  Tailwind,
-  Text,
-} from "@react-email/components"
+import { emailConfig } from "../email-config";
+import { Body, Button, Container, Head, Heading, Hr, Html, Img, Link, Preview, Section, Tailwind, Text } from "@react-email/components";
 
 
 export interface MagicLinkEmailProps {
@@ -28,8 +14,8 @@ export interface MagicLinkEmailProps {
 export const MagicLinkEmail = ({
   description = "Click the button below to securely log in to your account. If you did not request this, you can safely ignore this email.",
   loginLink = emailConfig.isDev
-    ? "http://email.modulized.co"
-    : "http://email.modulized.co",
+    ? "http://email.modulize.co"
+    : "http://email.modulize.co",
   browser = emailConfig.isDev ? "Chrome" : undefined,
   os = emailConfig.isDev ? "Mac OS" : undefined,
   time = emailConfig.isDev ? new Date() : undefined,
