@@ -1,24 +1,24 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { CopyButton, CopyWithClassNames } from "@/components/copy-button";
-import { Icons } from "@/components/icons";
-import { StyleSwitcher } from "@/components/style-switcher";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useEmailConfig } from "@/hooks/use-email-config";
-import { email_styles } from "@/lib/config/email-styles";
-import { email_templates_directory } from "@/lib/config/email-templates";
+import * as React from "react"
+import { CopyButton, CopyWithClassNames } from "@/components/copy-button"
+import { Icons } from "@/components/icons"
+import { StyleSwitcher } from "@/components/style-switcher"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useEmailConfig } from "@/hooks/use-email-config"
+import { email_styles } from "@/lib/config/email-styles"
+import { email_templates_directory } from "@/lib/config/email-templates"
 import { cn } from "@/lib/utils"
 import { render } from "@react-email/render"
 
-interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
+interface EmailPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
   extractClassname?: boolean
   extractedClassNames?: string
   align?: "center" | "start" | "end"
 }
 
-export function ComponentPreview({
+export function EmailPreview({
   name,
   children,
   className,
@@ -26,7 +26,7 @@ export function ComponentPreview({
   extractedClassNames,
   align = "center",
   ...props
-}: ComponentPreviewProps) {
+}: EmailPreviewProps) {
   const [config] = useEmailConfig()
   const index = email_styles.findIndex((style) => style.name === config.style)
   const Component = email_templates_directory[config.style][name]?.component

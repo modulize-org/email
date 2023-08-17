@@ -1,5 +1,5 @@
-import * as React from "react";
-import type { EmailStyle } from "./email-styles";
+import * as React from "react"
+import type { EmailStyle } from "./email-styles"
 import { MagicLinkEmail } from "@modulize/templates"
 
 type EmailDirectory = Record<

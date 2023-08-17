@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Image from "next/image"
-import Link from "next/link"
+import * as React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { Callout } from "@/components/callout"
 import { CodeBlockWrapper } from "@/components/code-block-wrapper"
-import { ComponentExample } from "@/components/component-example"
-import { ComponentPreview } from "@/components/component-preview"
-import { ComponentSource } from "@/components/component-source"
 import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button"
+import { EmailPreview } from "@/components/email-preview"
+import { EmailSource } from "@/components/email-source"
 import { StyleWrapper } from "@/components/style-wrapper"
 import {
   Accordion,
@@ -214,9 +213,8 @@ const components = {
   ),
   Image,
   Callout,
-  ComponentPreview,
-  ComponentExample,
-  ComponentSource,
+  EmailPreview,
+  EmailSource,
   AspectRatio,
   CodeBlockWrapper: ({ ...props }) => (
     <CodeBlockWrapper className="rounded-md border" {...props} />
