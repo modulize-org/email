@@ -16,7 +16,7 @@ interface EmailPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   align?: "center" | "start" | "end"
 }
 
-const PreviewDynamic = dynamic(() => import('./preview'), {loading:  () => <div>Loading...</div>});
+const PreviewDynamic = dynamic(() => import('./preview'), {loading:  () => <div>Loading...</div>, ssr: false});
 
 export function EmailPreview({
   name,
