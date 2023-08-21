@@ -12,7 +12,7 @@ Visit http://email.modulize.co/docs to view the documentation.
 
 ### User & Account Emails:
 
-= [x] Magic Link Sign In
+- [x] Magic Link Sign In
 - [ ] Email Address Confirmation
 - [ ] Password Changed
 - [ ] Account Deletion Confirmation
