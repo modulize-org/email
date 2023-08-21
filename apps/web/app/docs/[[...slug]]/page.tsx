@@ -1,12 +1,12 @@
-import { notFound } from "next/navigation";
 import { Mdx } from "@/components/mdx-components";
 import { DocsPager } from "@/components/pager";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import "@/lib/styles/mdx.css";
 import { cn } from "@/lib/utils";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 import { allDocs } from "contentlayer/generated";
-import Balancer from "react-wrap-balancer"
-import "@/lib/styles/mdx.css"
+import { notFound } from "next/navigation";
+import Balancer from "react-wrap-balancer";
 
 
 interface DocPageProps {
@@ -18,7 +18,6 @@ interface DocPageProps {
 async function getDocFromParams({ params }: DocPageProps) {
   const slug = params.slug?.join("/") || ""
   const doc = allDocs.find((doc) => doc.slugAsParams === slug)
-
   if (!doc) {
     null
   }

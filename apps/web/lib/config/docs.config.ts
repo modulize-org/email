@@ -47,7 +47,12 @@ export const docsConfig: DocsConfig = {
       items: [
         {
           title: "Magic Link Login",
-          href: "/docs/emails/magic-link-login",
+          href: "/docs/emails/magic-link",
+          items: [],
+        },
+        {
+          title: "New Device Sign In",
+          href: "/docs/emails/new-device-sign-in",
           items: [],
         },
       ],
