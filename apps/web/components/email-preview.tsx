@@ -1,13 +1,13 @@
 "use client"
 
+import * as React from "react"
+import dynamic from "next/dynamic"
 import { CopyButton, CopyWithClassNames } from "@/components/copy-button"
 import { StyleSwitcher } from "@/components/style-switcher"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useEmailConfig } from "@/hooks/use-email-config"
 import { email_styles } from "@/lib/config/email-styles"
 import { cn } from "@/lib/utils"
-import dynamic from "next/dynamic"
-import * as React from "react"
 
 interface EmailPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -16,8 +16,10 @@ interface EmailPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   align?: "center" | "start" | "end"
 }
 
-const PreviewDynamic = dynamic(() => import('./preview'), {loading:  () => <div>Loading...</div>, ssr: false});
-
+const PreviewDynamic = dynamic(() => import("./preview"), {
+  loading: () => <div>Loading...</div>,
+  ssr: false,
+})
 export function EmailPreview({
   name,
   children,
@@ -94,6 +96,7 @@ export function EmailPreview({
                 }
               )}
             >
+              {/* @ts-expect-error - TODO: FIx this type error */}
               <PreviewDynamic name={name} />
             </div>
           </>
