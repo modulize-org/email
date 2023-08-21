@@ -50,6 +50,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/emails/magic-link-login",
           items: [],
         },
+        {
+          title: "Email Change",
+          href: "/docs/emails/email-change",
+          items: [],
+        },
       ],
     },
   ],
