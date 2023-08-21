@@ -1,15 +1,13 @@
 "use client"
 
 import * as React from "react"
+import dynamic from "next/dynamic"
 import { CopyButton, CopyWithClassNames } from "@/components/copy-button"
-import { Icons } from "@/components/icons"
 import { StyleSwitcher } from "@/components/style-switcher"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useEmailConfig } from "@/hooks/use-email-config"
 import { email_styles } from "@/lib/config/email-styles"
-import { email_templates_directory } from "@/lib/config/email-templates"
 import { cn } from "@/lib/utils"
-import { render } from "@react-email/render"
 
 interface EmailPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
@@ -18,6 +16,10 @@ interface EmailPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   align?: "center" | "start" | "end"
 }
 
+const PreviewDynamic = dynamic(() => import("./preview"), {
+  loading: () => <div>Loading...</div>,
+  ssr: false,
+})
 export function EmailPreview({
   name,
   children,
@@ -29,15 +31,9 @@ export function EmailPreview({
 }: EmailPreviewProps) {
   const [config] = useEmailConfig()
   const index = email_styles.findIndex((style) => style.name === config.style)
-  const Component = email_templates_directory[config.style][name]?.component
-  const markup = render(<Component />, { pretty: true })
 
   const Codes = React.Children.toArray(children) as React.ReactElement[]
   const Code = Codes[index]
-
-  const Preview = React.useMemo(() => {
-    return <iframe srcDoc={markup} className="w-full h-[calc(100vh_-_150px)]" />
-  }, [name, config.style, markup])
 
   const codeString = React.useMemo(() => {
     if (
@@ -100,16 +96,8 @@ export function EmailPreview({
                 }
               )}
             >
-              <React.Suspense
-                fallback={
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                    Loading...
-                  </div>
-                }
-              >
-                {Preview}
-              </React.Suspense>
+              {/* @ts-expect-error - TODO: FIx this type error */}
+              <PreviewDynamic name={name} />
             </div>
           </>
         </TabsContent>
