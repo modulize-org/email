@@ -1,4 +1,4 @@
-import { MagicLinkEmail, NewDeviceSignInEmail } from "@modulize/templates"
+import { EmailChangeEmail, MagicLinkEmail, NewDeviceSignInEmail } from "@modulize/templates"
 import * as React from "react"
 import type { EmailStyle } from "./email-styles"
 
@@ -28,6 +28,12 @@ export const email_templates_directory = {
       type: "components:ui",
       registryDependencies: undefined,
       component: NewDeviceSignInEmail,
+    },
+    "email-change": {
+      name: "email-change",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: EmailChangeEmail,
     },
   },
 } satisfies EmailDirectory
