@@ -55,6 +55,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/emails/new-device-sign-in",
           items: [],
         },
+        {
+          title: "Email Change",
+          href: "/docs/emails/email-change",
+          items: [],
+        },
       ],
     },
   ],
